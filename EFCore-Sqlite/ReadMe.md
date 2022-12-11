@@ -10,7 +10,7 @@ Database project to save me time when creating new code first databases
 
 2. Rename project files `EFCore.Sqlite` and the directory to your namespace or name for project
 
-3. Open with VSCode or a similar application and replace all `EFCore.Sqlite` to you namespace
+3. Open with VSCode or a similar application and replace all `EFCore.Sqlite` to your namespace
 
 4. You can replace all `MyModel` with your own first model and rename the class files
 
@@ -18,6 +18,8 @@ Database project to save me time when creating new code first databases
 
 ## AppSettings (Optional)
 ---
+
+This is so you can run the migrations / building on command line.
 
 1. Remove the `AppSettings` ItemGroup in .csproj if you don't need to configure it that way
 
