@@ -1,0 +1,45 @@
+﻿<mah:MetroWindow x:Class="WPFPrismTemplate.Shell.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        xmlns:local="clr-namespace:WPFPrismTemplate.Shell.Views"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:prism="http://prismlibrary.com/" prism:ViewModelLocator.AutoWireViewModel="True"
+        WindowStartupLocation="CenterScreen"
+        Title="{Binding Title}"
+        Width="800" Height="450">
+
+    <!--Settings-->
+    <mah:MetroWindow.LeftWindowCommands>
+        <mah:WindowCommands>
+            <Button Content="LeftWinCmds" Command="{Binding ShowFlyoutCommand}"></Button>
+        </mah:WindowCommands>
+    </mah:MetroWindow.LeftWindowCommands>
+
+    <mah:MetroWindow.RightWindowCommands>
+        <mah:WindowCommands>
+            <Button Content="RightWinCmds" Command="{Binding ShowFlyoutCommand}"></Button>
+        </mah:WindowCommands>
+    </mah:MetroWindow.RightWindowCommands>
+
+    <mah:MetroWindow.Flyouts>
+        <mah:FlyoutsControl>
+            <local:AboutFlyout IsOpen="{Binding IsAboutOpen}"></local:AboutFlyout>
+
+            <mah:Flyout x:Name="FirstFlyout" Header="Settings" Position="Right" Width="250">
+                <!-- The content goes here -->
+            </mah:Flyout>
+            <mah:Flyout Header="About" Position="Right" Width="300">
+                <!-- The content goes here -->
+            </mah:Flyout>
+        </mah:FlyoutsControl>
+    </mah:MetroWindow.Flyouts>
+    
+    <Grid>
+        <!--use regionmanager to put views here-->
+        <ContentControl prism:RegionManager.RegionName="MainViewRegion" 
+                        d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+    </Grid>
+</mah:MetroWindow>
