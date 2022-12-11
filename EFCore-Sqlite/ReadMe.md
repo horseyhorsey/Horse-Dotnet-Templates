@@ -30,17 +30,17 @@ This is so you can run the migrations / building on command line.
 
 1. Create migrations 
 
-`dotnet ef migration add Initial`
+`dotnet ef migrations add Initial`
 
-1b. Or put migration into an output directory
+1b. Or put migrations into an output directory
 
-`dotnet ef migration add Initial -o Data/Migrations`
+`dotnet ef migrations add Initial -o Data/Migrations`
 
 2. Add another migration
 
-`dotnet ef migration add 2ndMigration`
+`dotnet ef migrations add 2ndMigration`
 
-3. To remove the last migration. If you have 3 migrations then it will remove the last
+3. To remove the last migrations. If you have 3 migrations then it will remove the last
 
 `dotnet ef migrations remove`
 
